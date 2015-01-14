@@ -1,5 +1,5 @@
 ﻿#pragma strict
 
 function SelfDestroy () {
-	Destroy(transform.parent.gameObject);
+	Destroy(transform.parent.parent.gameObject);
 }
