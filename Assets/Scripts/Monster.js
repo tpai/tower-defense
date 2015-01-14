@@ -15,7 +15,7 @@ function Start () {
 function Update () {
 	
 	if(hp <= 0) {
-		Destroy(gameObject);
+		anim.SetTrigger("dead");
 	}
 	else {
 		if(opponent == null) {
@@ -40,7 +40,10 @@ function Update () {
 function OnTriggerStay2D (other : Collider2D) {
 	if(
 		(other.tag == "EnemyMon" && transform.tag == "MyMon") ||
-		(other.tag == "MyMon" && transform.tag == "EnemyMon")
+		(other.tag == "MyMon" && transform.tag == "EnemyMon") ||
+		
+		(other.tag == "EnemyTower" && transform.tag == "MyMon") ||
+		(other.tag == "MyTower" && transform.tag == "EnemyMon")
 	) {
 		opponent = other.gameObject;
 	}

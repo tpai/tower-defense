@@ -5,13 +5,13 @@ var maxHP : float;
 var scaleX : float;
 
 function Start () {
-	maxHP = GetComponentInParent(Monster).hp;
+	maxHP = GetComponentInParent(Tower).hp;
 	nowHP = maxHP;
 	scaleX = transform.localScale.x;
 }
 
 function Update () {
-	nowHP = GetComponentInParent(Monster).hp;
+	nowHP = GetComponentInParent(Tower).hp;
 	var rate : float = nowHP / maxHP;
 	if(rate <= 0)rate = 0;
 	
