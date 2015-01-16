@@ -2,7 +2,7 @@
 
 var oldHP : int;
 var hp : int = 500;
-var anim : Animator;
+private var anim : Animator;
 
 function Start () {
 	oldHP = hp;
