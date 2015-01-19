@@ -3,7 +3,7 @@
 var hp : int = 100;
 var atk : int = 1;
 var opponent : GameObject;
-
+var award : int;
 var speed : float = 8f;
 var isAttacking : boolean = false;
 var anim : Animator;
@@ -51,4 +51,8 @@ function OnTriggerStay2D (other : Collider2D) {
 
 function Damage (atk : int) {
 	hp -= atk;
+}
+
+function GiveAward () {
+	GameObject.Find("EnergyBar").GetComponent(Energy).AddEnergy(award);
 }
